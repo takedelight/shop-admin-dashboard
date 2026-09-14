@@ -1,8 +1,18 @@
-import { Outlet } from "react-router";
+import { Outlet, useNavigate } from "react-router";
+import { useAuth } from "../../../shared/hooks";
 import { Navbar } from "../../Navbar";
 import { MAIN_MENU_ITEMS, PRODUCTS_MENU_ITEMS } from "../model/const";
 
 export const RootLayout = () => {
+  const { data } = useAuth();
+  const navigate = useNavigate();
+
+  if (!data) {
+    navigate("/auth/login");
+  }
+
+  console.log(data);
+
   return (
     <div className="flex min-h-screen">
       <aside className="w-65 h-screen bg-white">
