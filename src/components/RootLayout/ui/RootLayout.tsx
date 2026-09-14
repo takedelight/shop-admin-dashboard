@@ -1,17 +1,26 @@
+import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
 import { useAuth } from "../../../shared/hooks";
 import { Navbar } from "../../Navbar";
 import { MAIN_MENU_ITEMS, PRODUCTS_MENU_ITEMS } from "../model/const";
 
 export const RootLayout = () => {
-  const { data } = useAuth();
+  const { data, isLoading } = useAuth();
   const navigate = useNavigate();
 
-  if (!data) {
-    navigate("/auth/login");
+  useEffect(() => {
+    if (!isLoading && !data) {
+      navigate("/auth/login");
+    }
+  }, [data, isLoading, navigate]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
-  console.log(data);
+  if (!data) {
+    return null;
+  }
 
   return (
     <div className="flex min-h-screen">

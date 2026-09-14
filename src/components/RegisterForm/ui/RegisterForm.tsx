@@ -10,10 +10,10 @@ import {
 } from "@heroui/react";
 import { Controller } from "react-hook-form";
 import { Link } from "react-router";
-import { useLogin } from "../model/hooks/use-login";
+import { useRegister } from "../model/hooks/use-register";
 
-export const LoginForm = () => {
-  const { form, onSubmit } = useLogin();
+export const RegisterForm = () => {
+  const { form, onSubmit } = useRegister();
 
   const { handleSubmit, control } = form;
 
@@ -47,14 +47,26 @@ export const LoginForm = () => {
         )}
       />
 
+      <Controller
+        name="confirmPassword"
+        control={control}
+        render={({ field }) => (
+          <TextField isRequired type="password">
+            <Label>Confirm Password</Label>
+            <Input placeholder="Confirm your password" {...field} />
+            <FieldError />
+          </TextField>
+        )}
+      />
+
       <Button className="w-full" type="submit">
-        Login
+        Register
       </Button>
 
       <p className="text-center text-sm text-gray-500">
-        Don't have an account?{" "}
-        <Link to="/auth/register" className="text-blue-500 hover:underline">
-          Register
+        Already have an account?{" "}
+        <Link to="/auth/login" className="text-blue-500 hover:underline">
+          Login
         </Link>
       </p>
     </form>
