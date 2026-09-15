@@ -9,7 +9,6 @@ import {
   TextField,
 } from "@heroui/react";
 import { Controller } from "react-hook-form";
-import { Link } from "react-router";
 import { useLogin } from "../model/hooks/use-login";
 
 export const LoginForm = () => {
@@ -51,12 +50,7 @@ export const LoginForm = () => {
         Login
       </Button>
 
-      <p className="text-center text-sm text-gray-500">
-        Don't have an account?{" "}
-        <Link to="/auth/register" className="text-blue-500 hover:underline">
-          Register
-        </Link>
-      </p>
+
     </form>
   );
 };

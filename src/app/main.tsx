@@ -5,7 +5,6 @@ import { AuthLayout } from "../components/AuthLayout";
 import { RootLayout } from "../components/RootLayout";
 import { DashboardPage } from "../pages/dashboard";
 import { LoginPage } from "../pages/login";
-import { RegisterPage } from "../pages/register";
 import "./index.css";
 import { QueryProvider } from "./providers/query.provider";
 
@@ -20,7 +19,6 @@ createRoot(document.getElementById("root")!).render(
 
           <Route path="auth" element={<AuthLayout />}>
             <Route path="login" element={<LoginPage />} />
-            <Route path="register" element={<RegisterPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
