@@ -1,8 +1,8 @@
 import { Outlet, useNavigate } from "react-router";
-import { useAuth } from "../../../shared/hooks";
+import { useUser } from "../../../shared/hooks";
 
 export const AuthLayout = () => {
-  const { data } = useAuth();
+  const { data } = useUser();
   const navigate = useNavigate();
 
   if (data) {

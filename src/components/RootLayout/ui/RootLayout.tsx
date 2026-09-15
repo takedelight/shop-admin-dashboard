@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
-import { useAuth } from "../../../shared/hooks";
+import { useUser } from "../../../shared/hooks";
 import { Navbar } from "../../Navbar";
 import { MAIN_MENU_ITEMS, PRODUCTS_MENU_ITEMS } from "../model/const";
 
 export const RootLayout = () => {
-  const { data, isLoading } = useAuth();
+  const { data, isLoading } = useUser();
   const navigate = useNavigate();
 
   useEffect(() => {
