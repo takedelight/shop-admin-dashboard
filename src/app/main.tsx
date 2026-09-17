@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import { AuthLayout } from "../components/AuthLayout";
 import { RootLayout } from "../components/RootLayout";
 import { DashboardPage } from "../pages/dashboard";
+import { CategoriesPage } from "../pages/categories";
 import { LoginPage } from "../pages/login";
 import { NewProductPage } from "../pages/new-product";
 import "./index.css";
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route element={<RootLayout />}>
             <Route index element={<DashboardPage />} />
+            <Route path="categories" element={<CategoriesPage />} />
             <Route path="products">
               <Route path="new-product" element={<NewProductPage />} />
             </Route>
