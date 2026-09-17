@@ -23,7 +23,7 @@ export const RootLayout = () => {
   }
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen overflow-y-hidden">
       <aside className="w-65 h-screen bg-white">
         <div className="py-3.75 px-7.5">
           <h3 className="uppercase text-xs text-[#8B909A]">Main Menu</h3>

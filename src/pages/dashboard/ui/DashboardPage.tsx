@@ -1,5 +1,3 @@
 export const DashboardPage = () => {
-  return <div className="flex min-h-screen">
-    Page
-  </div>;
+  return <div className="flex flex-1">Page</div>;
 };
