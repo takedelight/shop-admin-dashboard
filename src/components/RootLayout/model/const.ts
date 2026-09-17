@@ -1,4 +1,11 @@
-import { FolderTree, House, Package, ShoppingCart, Users } from "lucide-react";
+import {
+  FolderTree,
+  House,
+  Package,
+  Plus,
+  ShoppingCart,
+  Users,
+} from "lucide-react";
 
 export const MAIN_MENU_ITEMS = [
   {
@@ -28,5 +35,10 @@ export const PRODUCTS_MENU_ITEMS = [
     alias: "All Products",
     href: "/products",
     icon: Package,
+  },
+  {
+    alias: "Add Product",
+    href: "/products/new-product",
+    icon: Plus,
   },
 ];
