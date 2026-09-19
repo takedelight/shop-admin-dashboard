@@ -1,4 +1,5 @@
 import { Button, Modal } from "@heroui/react";
+import { Plus } from "lucide-react";
 import { FormProvider } from "react-hook-form";
 import { useCreateCategory } from "../model/hooks/use-create-category";
 import { CreateCategoryIconPicker } from "./CreateCategoryIconPicker";
@@ -12,7 +13,11 @@ export const CreateCategoryModalEntry = () => {
 
   return (
     <Modal>
-      <Button variant="secondary">Add Category</Button>
+      <Button variant="secondary">
+        {" "}
+        <Plus />
+        Add Category
+      </Button>
       <Modal.Backdrop>
         <Modal.Container>
           <Modal.Dialog className="sm:max-w-lg">
