@@ -9,7 +9,9 @@ export const categorySchema = z.object({
     .string()
     .max(50)
     .optional(),
+  totalCount: z.number(),
   createdAt: z.date(),
+  totalProducts: z.number(),
 });
 
 export type Category = z.infer<typeof categorySchema>;
