@@ -7,12 +7,12 @@ import { CreateCategoryNameField } from "./CreateCategoryNameField";
 import { CreateCategorySlugField } from "./CreateCategorySlugField";
 
 export const CreateCategoryModalEntry = () => {
-  const { form, onSubmit, isLoading } = useCreateCategory();
+  const { form, onSubmit, isLoading,isOpen,setOpen } = useCreateCategory();
 
   const { handleSubmit } = form;
 
   return (
-    <Modal>
+    <Modal isOpen={isOpen} onOpenChange={setOpen}>
       <Button variant="secondary">
         {" "}
         <Plus />

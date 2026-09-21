@@ -7,7 +7,6 @@ export const categorySchema = z.object({
   isActive: z.boolean(),
   slug: z
     .string()
-    .min(2, "Slug must be at least 2 characters")
     .max(50)
     .optional(),
   createdAt: z.date(),

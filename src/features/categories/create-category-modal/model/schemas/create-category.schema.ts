@@ -5,6 +5,7 @@ export const createCategorySchema = categorySchema.pick({
   slug: true,
   name: true,
   icon: true,
+  isActive: true,
 });
 
 export type CategoryFormData = z.infer<typeof createCategorySchema>;
