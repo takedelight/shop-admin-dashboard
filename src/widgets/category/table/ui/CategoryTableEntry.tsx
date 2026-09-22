@@ -12,7 +12,7 @@ export const CategoryTableEntry = () => {
     handlePageChange,
     totalPages,
     handleRowsPerPageChange,
-    rowsPerPage,
+    limit,
   } = useCategoryTable();
 
   return (
@@ -33,7 +33,7 @@ export const CategoryTableEntry = () => {
           handlePageChange={handlePageChange}
           pages={pages}
           handleRowsPerPageChange={handleRowsPerPageChange}
-          rowsPerPage={rowsPerPage}
+          rowsPerPage={limit}
         />
       </Table.Footer>
     </Table>

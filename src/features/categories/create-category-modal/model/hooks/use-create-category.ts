@@ -1,6 +1,7 @@
 import { api } from "@/shared/api";
+import { CACHE_KEYS } from "@/shared/const";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
@@ -9,8 +10,9 @@ import {
 } from "../schemas/create-category.schema";
 
 export const useCreateCategory = () => {
-  const [isOpen,setOpen] = useState(false)
+  const queryClient = useQueryClient()
 
+  const [isOpen,setOpen] = useState(false)
 
   const form = useForm<CategoryFormData>({
     resolver: zodResolver(createCategorySchema),
@@ -23,13 +25,14 @@ export const useCreateCategory = () => {
   });
 
   const createCategoryMutation = useMutation({
-    mutationKey: ["create_category"],
+    mutationKey: [CACHE_KEYS.CREATE_CATEGORY],
     mutationFn: async (data: CategoryFormData) => {
       await api.post('/category', data);
     },
-    onSuccess: () => {
+    onSuccess: async () => {
       form.reset();
       setOpen(false)
+      await queryClient.invalidateQueries({queryKey:[CACHE_KEYS.GET_CATEGORIES]})
     },
   });
 
