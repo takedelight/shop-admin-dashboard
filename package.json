@@ -43,9 +43,12 @@
     "vite": "^8.2.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css,md}": [
+    "*.{js,jsx,ts,tsx}": [
       "oxfmt --write",
       "oxlint --fix"
+    ],
+    "*.{json,css,md}": [
+      "oxfmt --write"
     ]
   }
 }
