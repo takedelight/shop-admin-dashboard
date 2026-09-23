@@ -5,7 +5,7 @@ import { Controller, useFormContext } from "react-hook-form";
 import { APPLIANCE_ICONS } from "../model/const/const";
 import { getIconByName } from "../model/helpers/get-icon-by-name";
 
-export const CreateCategoryIconPicker = ({}) => {
+export const CreateCategoryIconPicker = () => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const form = useFormContext();
 
