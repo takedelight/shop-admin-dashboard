@@ -2,32 +2,32 @@
 
 ## Project Overview
 
-| Property       | Value                                      |
-| -------------- | ------------------------------------------ |
-| **Name**       | react-vite-template                        |
-| **Type**       | Single Page Application (SPA)              |
-| **Framework**  | React 19 + Vite 8                          |
-| **Language**   | TypeScript 6                               |
-| **UI Library** | HeroUI v3 (NOT v2)                         |
-| **Styling**    | Tailwind CSS v4 (NOT v3)                   |
-| **Linting**    | oxlint (NOT ESLint)                        |
-| **Formatting** | oxfmt (NOT Prettier)                       |
-| **Git Hooks**  | Husky + lint-staged                        |
-| **Pkg Manager**| Bun                                        |
+| Property        | Value                         |
+| --------------- | ----------------------------- |
+| **Name**        | react-vite-template           |
+| **Type**        | Single Page Application (SPA) |
+| **Framework**   | React 19 + Vite 8             |
+| **Language**    | TypeScript 6                  |
+| **UI Library**  | HeroUI v3 (NOT v2)            |
+| **Styling**     | Tailwind CSS v4 (NOT v3)      |
+| **Linting**     | oxlint (NOT ESLint)           |
+| **Formatting**  | oxfmt (NOT Prettier)          |
+| **Git Hooks**   | Husky + lint-staged           |
+| **Pkg Manager** | Bun                           |
 
 ---
 
 ## Commands
 
-| Command          | Description                                         |
-| ---------------- | --------------------------------------------------- |
-| `bun dev`        | Start Vite dev server                               |
-| `bun build`      | Production build (`tsc -b && vite build`)           |
-| `bun lint`       | Run oxlint on the project                           |
-| `bun lint:fix`   | Run oxlint with auto-fix                            |
-| `bun fmt`        | Format all files with oxfmt                         |
-| `bun fmt:check`  | Check formatting without modifying files            |
-| `bun preview`    | Preview production build locally                    |
+| Command         | Description                               |
+| --------------- | ----------------------------------------- |
+| `bun dev`       | Start Vite dev server                     |
+| `bun build`     | Production build (`tsc -b && vite build`) |
+| `bun lint`      | Run oxlint on the project                 |
+| `bun lint:fix`  | Run oxlint with auto-fix                  |
+| `bun fmt`       | Format all files with oxfmt               |
+| `bun fmt:check` | Check formatting without modifying files  |
+| `bun preview`   | Preview production build locally          |
 
 ---
 
@@ -105,6 +105,7 @@ export const MyComponent = () => {
 - **Description**: imperative mood, lowercase, no period
 
 **Examples:**
+
 - `✨ feat(auth): add OAuth2 login with Google`
 - `🐛 fix(cart): prevent double-submission on slow networks`
 - `🔧 chore(deps): add agent skills and opencode configuration`
@@ -112,18 +113,19 @@ export const MyComponent = () => {
 ### Pre-commit Hooks
 
 lint-staged runs automatically on staged files:
+
 - `*.{js,jsx,ts,tsx,json,css,md}` → `oxfmt --write` + `oxlint --fix`
 
 ---
 
 ## Available Skills
 
-| Skill                    | Purpose                                          |
-| ------------------------ | ------------------------------------------------ |
-| `heroui-react`           | HeroUI v3 component docs, examples, source code  |
-| `git-hero`               | Git best practices, commit discipline, CI/CD     |
-| `typescript-advanced-types` | Generics, conditional types, mapped types      |
-| `vercel-react-best-practices` | React/Next.js performance optimization rules |
+| Skill                         | Purpose                                         |
+| ----------------------------- | ----------------------------------------------- |
+| `heroui-react`                | HeroUI v3 component docs, examples, source code |
+| `git-hero`                    | Git best practices, commit discipline, CI/CD    |
+| `typescript-advanced-types`   | Generics, conditional types, mapped types       |
+| `vercel-react-best-practices` | React/Next.js performance optimization rules    |
 
 Load skills with the `skill` tool before performing relevant tasks.
 
