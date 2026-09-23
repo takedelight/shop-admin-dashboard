@@ -7,12 +7,14 @@ import { DashboardPage } from "../pages/dashboard";
 import { CategoriesPage } from "../pages/categories";
 import { LoginPage } from "../pages/login";
 import { NewProductPage } from "../pages/new-product";
+import { Toast } from "@heroui/react/toast";
 import "./index.css";
 import { QueryProvider } from "./providers/query.provider";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryProvider>
+      <Toast.Provider />
       <BrowserRouter>
         <Routes>
           <Route element={<RootLayout />}>
@@ -29,5 +31,5 @@ createRoot(document.getElementById("root")!).render(
         </Routes>
       </BrowserRouter>
     </QueryProvider>
-  </StrictMode>,
+  </StrictMode>
 );
