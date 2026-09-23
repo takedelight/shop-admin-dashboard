@@ -15,7 +15,7 @@ export const useCategoryTable = () => {
     queryFn: async () =>
       api
         .get<{ items: Category[]; totalItems: number }>("/category", {
-          params: { page,  limit },
+          params: { page, limit },
         })
         .then((res) => res.data),
     refetchOnWindowFocus: false,
@@ -40,7 +40,6 @@ export const useCategoryTable = () => {
 
     setSearchParams(params);
   };
-
 
   const handleRowsPerPageChange = (limit: number) => {
     const params = new URLSearchParams(searchParams);

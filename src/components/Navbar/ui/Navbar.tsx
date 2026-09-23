@@ -4,10 +4,16 @@ import { Bell } from "lucide-react";
 import { useLocation } from "react-router";
 import { api } from "../../../shared/api";
 import { useUser } from "../../../shared/hooks";
-import { MAIN_MENU_ITEMS, PRODUCTS_MENU_ITEMS } from "../../RootLayout/model/const";
+import {
+  MAIN_MENU_ITEMS,
+  PRODUCTS_MENU_ITEMS,
+} from "../../RootLayout/model/const";
 
 const PAGE_TITLES: Record<string, string> = Object.fromEntries(
-  [...MAIN_MENU_ITEMS, ...PRODUCTS_MENU_ITEMS].map((item) => [item.href, item.alias]),
+  [...MAIN_MENU_ITEMS, ...PRODUCTS_MENU_ITEMS].map((item) => [
+    item.href,
+    item.alias,
+  ])
 );
 
 export const Navbar = () => {
@@ -25,7 +31,9 @@ export const Navbar = () => {
 
   return (
     <nav className="h-15.5 flex items-center justify-between px-4  bg-white ">
-      <h1 className="text-2xl font-bold ">{PAGE_TITLES[location.pathname] ?? "Dashboard"}</h1>
+      <h1 className="text-2xl font-bold ">
+        {PAGE_TITLES[location.pathname] ?? "Dashboard"}
+      </h1>
       <div className="flex items-center gap-6">
         <Button size="sm" variant="ghost" isIconOnly>
           <Bell className="size-5 text-neutral-400" />

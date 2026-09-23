@@ -49,8 +49,6 @@ export const LoginForm = () => {
       <Button className="w-full" type="submit">
         Login
       </Button>
-
-
     </form>
   );
 };

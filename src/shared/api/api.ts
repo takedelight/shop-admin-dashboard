@@ -8,7 +8,10 @@ export const api = axios.create({
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
-    if (error.response?.status === 401 && error.config.url !== "/auth/refresh") {
+    if (
+      error.response?.status === 401 &&
+      error.config.url !== "/auth/refresh"
+    ) {
       try {
         await api.post("/auth/refresh");
       } catch {
@@ -16,5 +19,5 @@ api.interceptors.response.use(
       }
     }
     return Promise.reject(error);
-  },
+  }
 );

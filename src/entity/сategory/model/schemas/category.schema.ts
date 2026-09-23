@@ -5,10 +5,7 @@ export const categorySchema = z.object({
   icon: z.string(),
   name: z.string().min(2, "Name must be at least 2 characters").max(50),
   isActive: z.boolean(),
-  slug: z
-    .string()
-    .max(50)
-    .optional(),
+  slug: z.string().max(50).optional(),
   totalCount: z.number(),
   createdAt: z.date(),
   totalProducts: z.number(),

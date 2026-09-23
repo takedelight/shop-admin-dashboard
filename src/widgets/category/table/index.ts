@@ -1,1 +1,1 @@
-export {CategoryTableEntry} from "./ui/CategoryTableEntry";
+export { CategoryTableEntry } from "./ui/CategoryTableEntry";

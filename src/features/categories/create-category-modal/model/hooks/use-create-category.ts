@@ -10,9 +10,9 @@ import {
 } from "../schemas/create-category.schema";
 
 export const useCreateCategory = () => {
-  const queryClient = useQueryClient()
+  const queryClient = useQueryClient();
 
-  const [isOpen,setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false);
 
   const form = useForm<CategoryFormData>({
     resolver: zodResolver(createCategorySchema),
@@ -27,12 +27,14 @@ export const useCreateCategory = () => {
   const createCategoryMutation = useMutation({
     mutationKey: [CACHE_KEYS.CREATE_CATEGORY],
     mutationFn: async (data: CategoryFormData) => {
-      await api.post('/category', data);
+      await api.post("/category", data);
     },
     onSuccess: async () => {
       form.reset();
-      setOpen(false)
-      await queryClient.invalidateQueries({queryKey:[CACHE_KEYS.GET_CATEGORIES]})
+      setOpen(false);
+      await queryClient.invalidateQueries({
+        queryKey: [CACHE_KEYS.GET_CATEGORIES],
+      });
     },
   });
 
@@ -42,6 +44,6 @@ export const useCreateCategory = () => {
       createCategoryMutation.mutateAsync(data),
     isLoading: createCategoryMutation.isPending,
     isOpen,
-    setOpen
+    setOpen,
   };
 };

@@ -36,7 +36,7 @@ export const EditCategoryModal = ({
   });
 
   const rootCategories = categories.filter(
-    (c) => !c.parentId && c.id !== category.id,
+    (c) => !c.parentId && c.id !== category.id
   );
 
   return (

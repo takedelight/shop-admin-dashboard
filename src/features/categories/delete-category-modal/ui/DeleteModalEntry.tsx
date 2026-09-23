@@ -5,14 +5,15 @@ import { useDeleteCategoryModal } from "../model/hooks/use-delete-modal";
 
 interface DeleteCategoryModalProps {
   categoryId: string;
-  categoryName:string
+  categoryName: string;
 }
 
 export const DeleteCategoryModalEntry = ({
   categoryId,
-  categoryName
+  categoryName,
 }: DeleteCategoryModalProps) => {
-  const { isOpen, onOpenChange,handleDeleteCategory,isPending } = useDeleteCategoryModal();
+  const { isOpen, onOpenChange, handleDeleteCategory, isPending } =
+    useDeleteCategoryModal();
 
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
@@ -38,7 +39,13 @@ export const DeleteCategoryModalEntry = ({
                 Cancel
               </Button>
 
-              <Button onClick={() => handleDeleteCategory(categoryId)} isPending = {isPending}  variant="danger">Delete</Button>
+              <Button
+                onClick={() => handleDeleteCategory(categoryId)}
+                isPending={isPending}
+                variant="danger"
+              >
+                Delete
+              </Button>
             </Modal.Footer>
           </Modal.Dialog>
         </Modal.Container>
